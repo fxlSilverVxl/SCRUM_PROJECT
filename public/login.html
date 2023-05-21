@@ -15,7 +15,7 @@
             <input type="radio" name="tipo" value="administrador">
         </label>
         <label for="cocina">Cocinero
-            <input type="radio" name="tipo" value="cocinero">
+            <input type="radio" name="tipo" value="cocina">
         </label>
         <label for="vendedor">Vendedor
             <input type="radio" name="tipo" value="vendedor">
@@ -24,7 +24,6 @@
 
         <input type="password" name="password" id="password" placeholder="contraseña">
         <input type="submit" value="Iniciar sesion">
-        <!-- <input type="button" value="Iniciar sesion" id="buttonLG" onclick="login()"> -->
     </form>
 
     <form action="/login" method="post" id="userType"></form>
@@ -32,39 +31,38 @@
     <!-- Por que no lo utilizamos en otro archivo JS y lo escribimos aqui?
     Porque al ejecutarlo con express, el html no reconoce el archivo js -->
     <script>
-        function login(){
-            var radioButtons = document.getElementsByName('tipo')
-            var seleccion;
+        // function login(){
+        //     var radioButtons = document.getElementsByName('tipo')
+        //     var seleccion;
             
-            // * Revisa cual checkbox esta marcada   ->  seleccion
-            for (var i = 0; i < radioButtons.length; i++) {
-                if (radioButtons[i].checked) {
-                    seleccion = radioButtons[i].value;
-                    break;
-                }
-            }
+        //     // * Revisa cual checkbox esta marcada   ->  seleccion
+        //     for (var i = 0; i < radioButtons.length; i++) {
+        //         if (radioButtons[i].checked) {
+        //             seleccion = radioButtons[i].value;
+        //             break;
+        //         }
+        //     }
             
-            var pass = document.getElementById('password').value
-            // console.log(seleccion + ' ' + pass)
+        //     var pass = document.getElementById('password').value
 
-            const datos = {
-                tipo: seleccion,
-                password: pass
-            }
+        //     const datos = {
+        //         tipo: seleccion,
+        //         password: pass
+        //     }
 
-            $.ajax({
-                url:'/',
-                method:'POST',
-                contentType:'application/json',
-                data: JSON.stringify(datos),
-                success: function(response) {
-                console.log(response);
-                },
-                error: function(xhr, status, error) {
-                console.error(error);
-                }
-            })
-        }
+        //     $.ajax({
+        //         url:'/',
+        //         method:'POST',
+        //         contentType:'application/json',
+        //         data: JSON.stringify(datos),
+        //         success: function(response) {
+        //         console.log(response);
+        //         },
+        //         error: function(xhr, status, error) {
+        //         console.error(error);
+        //         }
+        //     })
+        // }
     </script>
 </body>
 </html> 

@@ -57,26 +57,29 @@ app.get('/sellerPage', (req, res) => {
 app.post('/login/', (req, res) => {
     const username = req.body.tipo;
     const password = req.body.password;
-    var encontrado = false;
     
+    var type = 'ninguno';
+
     usuarios.forEach(item => {
         if(item.type == username && item.password == password) {
-            if(username == 'administrador'){
-                act = 1;
-                res.redirect('/adminPage')
-            }
-            if(username == 'cocina') {
-                res.redirect('/kitchenPage/')
-                res.sendFile(path.resolve(__dirname, '../vendedor.html'));
-                
-            }
-            if(username == 'vendedor') {
-                res.redirect('/sellerPage/')
-                res.sendFile(path.resolve(__dirname, '../cocinero.html'));
-
-            } 
+            type = item.type;
         }
     })
+    
+    if(type == 'administrador'){
+        act = 1;
+        res.redirect('/adminPage')
+    }
+    else if(type == 'cocina') {
+        act = 2;
+        res.redirect('/kitchenPage')
+    }
+    else if (type == 'vendedor') {
+        act = 3;
+        res.redirect('/sellerPage')
+    }
+    
+    res.send('Datos erroneos jaja salu2 🥵🥵🥵🥵')
 })
 
 //! ---------- Ruta no econtrada ----------
