@@ -1,0 +1,57 @@
+[
+    {
+        "presio": 30,
+        "id": 1,
+        "title": "Torta de bistec"
+    },
+    {
+        "presio": 35,
+        "id": 2,
+        "title": "Torta de chorizo"
+    },
+    {
+        "presio": 35,
+        "id": 3,
+        "title": "Torta de pastor"
+    },
+    {
+        "presio": 35,
+        "id": 4,
+        "title": "Torta de Jamon"
+    },
+    {
+        "presio":40,
+        "id": 5,
+        "title": "Torta de lomo"
+    },
+    {
+        "presio":40,
+        "id": 6,
+        "title": "Torta de pierna"
+    },
+    {
+        "presio": 40,
+        "id": 7,
+        "title": "Pizza individual"
+    },
+    {
+        "presio": 30,
+        "id": 8,
+        "title": "Torta de chilaquiles"
+    },
+    {
+        "presio": 10,
+        "id": 9,
+        "title": "Taco de bistec"
+    },
+    {
+        "presio": 10,
+        "id": 10,
+        "title": "Taco de chorizo"
+    },
+    {
+        "presio": 10,
+        "id": 11,
+        "title": "Taco de pastor"
+    }
+]
