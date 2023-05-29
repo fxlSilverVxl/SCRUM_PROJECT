@@ -1,0 +1,12 @@
+Crear la base de datos y los modelos en MongoDB
+
+1. Abrir MongoDB Compass
+2. Crear una base de datos con el nombre "comanda-cafeteria-db"
+3. Crear las colecciones pedidos, usuarios y mensajes
+4. Seleccionar alguna colección 
+5. Seleccionar ADD DATA
+6. Import JSON
+7. Importar el archivo correspondiente a la colección ubicado en esta carpeta
+8. El modelo se creará automáticamente
+
+Si vas a modificar algún modelo, modifícalo también en su archivo JSON para que todos lo podamos tener igual.

@@ -1,0 +1,14 @@
+[
+  {
+  "usuario":"caja",
+  "contrasena":"caja"
+  },
+  {
+  "usuario":"cocina",
+  "contrasena":"cocina"
+  },
+  {
+    "usuario":"admin",
+    "contrasena":"admin"
+  }
+]
