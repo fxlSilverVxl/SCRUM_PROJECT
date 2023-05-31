@@ -50,7 +50,7 @@
                                 </th>
                             </tr>
                         <?php }?>
-                        </tbody>
+                      </tbody>
                     </table>
                 </div>
             </div>
@@ -183,4 +183,3 @@
         </div>
     </div>
 <?php include "./scripts.php"; ?>
-
