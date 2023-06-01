@@ -37,7 +37,7 @@
                                     </button>
                                 </th>
                                 <th style="width: 111px">
-                                    <button type="button" class="btn btn-primary eliminar-pedido" data-bs-toggle="modal" data-bs-target="#AdvertenciaModal" style="background-color: #ff0202; margin-top: 10px; border-color: #ff0202">
+                                    <button type="submit" class="btn btn-primary eliminar-pedido" data-bs-toggle="modal" data-bs-target="#AdvertenciaModal" style="background-color: #ff0202; margin-top: 10px; border-color: #ff0202" data-pedido-id="<?php echo $item->_id?>">
                                       <input type="text" value="<?php echo $item->_id?>" id="itemID">
                                       <i class="fa-sharp fa-solid fa-trash"></i>
                                     </button>
@@ -177,4 +177,19 @@
 
         </div>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const eliminarPedidoButtons = document.querySelectorAll('.eliminar-pedido');
+
+        eliminarPedidoButtons.forEach(function(button) {
+          button.addEventListener('click', function() {
+            const pedidoID = this.getAttribute('data-pedido-id');
+
+            const itemIDInput = document.querySelector('#AdvertenciaModal input[type="text"]');
+            itemIDInput.value = pedidoID;
+          });
+        });
+      });
+    </script>
 <?php include "./scripts.php"; ?>
