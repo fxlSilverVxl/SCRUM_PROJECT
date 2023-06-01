@@ -10,7 +10,7 @@
   <title>Log-in</title>
 </head>
 <body>
-    <form action="">
+    <form action="./redirect.php" method="POST">
             <h1>Log-in</h1>
             <div class="form-grupo">
                 <h2> <i class="fa-solid fa-user" style="margin-left: -27px;"></i> Usuario:</h2>
@@ -41,9 +41,9 @@
             </div>
 
             <input type="button" value="Iniciar sesión" class="btn btn-primary btn-block" id="loginBTN">
-            <div>
-                <input type="button" value="Pantalla de pedidos listos" class="btn btn-secondary btn-block" onclick="">
-            </div>
         </form>
+        <div>
+            <input type="button" value="Pantalla de pedidos listos" class="btn btn-secondary btn-block" onclick="window.location.href = 'pedidosListos.php'">
+        </div>
 
 <?php include "./scripts.php"; ?>

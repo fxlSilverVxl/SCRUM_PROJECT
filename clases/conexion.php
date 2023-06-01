@@ -1,6 +1,5 @@
 <?php
-
-  require_once $_SERVER['DOCUMENT_ROOT'] . "/comanda-cafeteria/vendor/autoload.php";
+  require_once $_SERVER['DOCUMENT_ROOT'] . "/cloneRep/SCRUM_PROJECT/vendor/autoload.php";
   class Conexion {
     public function conectar(){
       try {
