@@ -43,7 +43,7 @@
             <input type="button" value="Iniciar sesión" class="btn btn-primary btn-block" id="loginBTN">
         </form>
         <div>
-            <input type="button" value="Pantalla de pedidos listos" class="btn btn-secondary btn-block" onclick="window.location.href = 'pedidosListos.php'">
+            <input type="button" value="Pantalla de pedidos listos" class="btn btn-secondary btn-block" onclick="window.location.href = 'listos.html'">
         </div>
 
 <?php include "./scripts.php"; ?>
