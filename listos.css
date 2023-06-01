@@ -1,0 +1,17 @@
+nav{
+    background-color: #DD540A;
+}
+th{
+    background-color: #DD540A;
+}
+.img{
+    margin-top: -5px;
+}
+
+tbody{
+    font-size: medium
+}
+thead{
+    background-color: #DD540A; 
+    color: blanchedalmond;
+}
