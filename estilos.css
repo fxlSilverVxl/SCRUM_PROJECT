@@ -1,11 +1,116 @@
 .scrollable{
-    height: 400px;
     overflow: scroll;
+    height: 400px ;
+}
+.scrollable::-webkit-scrollbar {
+    width: 12px;
+    height: 0px;               
 }
 
-
-.table-fixed tbody td,
-.table-fixed th{
-    float: left;
-    border-bottom-width: 0;
+.scrollable::-webkit-scrollbar-track {
+    background: rgb(252, 252, 252);        
 }
+  
+.scrollable::-webkit-scrollbar-thumb {
+    background-color: rgb(139, 138, 138);    
+    border-radius: 20px;       
+    border: 3px solid rgb(252, 252, 252); 
+ 
+}
+.logout{
+    background-color: #DD540A; 
+    border-color: #DD540A;
+    color: #ffffff;
+}
+.btneditar{
+    background-color: #403e3d;
+    border-color: #403e3d;
+    position: relative;
+}
+.btneditar:before {
+    content:"";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 1s ease;
+}
+.btneditar:hover:before {
+  width: 100%;
+  background-color: #5b58574d;
+}
+  
+.btnborrarpedido{
+    background-color: #AB1717; 
+    border-color: #AB1717
+}
+
+.btnnuevopedido{
+    background-color: #DD540A; 
+    width: 350px; 
+    border-color: #DD540A; 
+    color:rgb(252, 252, 252)
+}
+.btneliminarmensaje{
+    background-color: #AB1717; 
+    border-color: #AB1717
+}
+.modal-header{
+    background-color: rgb(255, 156, 7)
+}
+.modal-title{
+    padding-left: 100px;
+    color: #ffffff;
+}
+.btn-ordenar{
+    background-color: #4f7115; 
+    margin-left: 380px; 
+    margin-top: 20px;
+    border-color: #4f7115;
+}
+.modal-title2{
+    padding-left: 150px;
+    color: #ffffff;
+}
+.btnlisto{
+    background-color: #4f7115; 
+    margin-left: 380px; 
+    margin-top: 20px; 
+    width:83px; 
+    border-color:#4f7115;
+}
+.label{
+    margin-top:10px
+}
+.modaladvertencia{
+    background-color: #AB1717
+}
+.title-adv{
+    color: white; 
+    padding-left: 145px
+}
+.contenidoadv{
+    margin-top: 25px
+}
+.btneliminar{
+    background-color: #4f7115; 
+    margin-left: 0px; 
+    margin-top: 10px; 
+    width:83px; 
+    border-color: #4f7115
+}
+.headtabla{
+    color: rgb(77, 76, 76);
+}
+.h2pedidos{
+    color: #403e3d;
+}
+nav{
+    background-color: #DD540A;
+}
+th{
+    background-color: #DD540A;
+}
+
