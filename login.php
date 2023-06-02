@@ -10,26 +10,19 @@
   <title>Log-in</title>
 </head>
 <body>
-    <form action="./redirect.php" method="POST">
+    <form action="./procesos/loginv.php" method="POST">
             <h1>Log-in</h1>
             <div class="form-grupo">
                 <h2> <i class="fa-solid fa-user" style="margin-left: -27px;"></i> Usuario:</h2>
-                
-                <div class="form-check" style="margin-left: -41px;">
-                    <input class="" type="radio" name="tipo" id="administrador" value="administrador" checked>
-                    <label class="form-check-label" for="administrador">
-                        Administrador
-                    </label>
-                </div>
                 <div class="form-check" style="margin-left: -81px;">
                     <input class="" type="radio" name="tipo" id="cocina" value="cocina">
-                    <label class="form-check-label" for="cocina">
+                    <label class="form-check-label" for="">
                         Cocinero
                     </label>
                 </div>
                 <div class="form-check" style="margin-left: -75px;">
-                    <input class="" type="radio" name="tipo" id="vendedor" value="vendedor">
-                    <label class="form-check-label" for="vendedor">
+                    <input class="" type="radio" name="tipo" id="caja" value="caja">
+                    <label class="form-check-label" for="caja">
                         Vendedor
                     </label>
                 </div>
@@ -39,8 +32,8 @@
                 <h2> <i class="fa-solid fa-lock"></i>  Contraseña:</h2>
                 <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña">
             </div>
-
-            <input type="button" value="Iniciar sesión" class="btn btn-primary btn-block" id="loginBTN">
+            
+            <input type="submit" value="Iniciar sesión" class="btn btn-primary btn-block" id="loginBTN">
         </form>
         <div>
             <input type="button" value="Pantalla de pedidos listos" class="btn btn-secondary btn-block" onclick="window.location.href = 'listos.html'">

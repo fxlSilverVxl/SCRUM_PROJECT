@@ -3,16 +3,12 @@
     "producto": "quesadilla de chorizo",
     "precio": "25",
     "descripcion": "sin cebolla",
-    "fecha": "29/05/2023",
-    "terminado": false,
-    "entregado": false
+    "fecha": "29/05/2023"
   },
   {
     "producto": "quesadilla de bistec",
     "precio": "25",
     "descripcion": "",
-    "fecha": "29/05/2023",
-    "terminado": false,
-    "entregado": false
+    "fecha": "29/05/2023"
   }
 ]

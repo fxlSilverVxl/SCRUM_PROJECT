@@ -8,7 +8,6 @@
   <script src="https://kit.fontawesome.com/a552314827.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./public/css/style.css">
   <link rel="stylesheet" href="estilos.css">
-  <link rel="stylesheet" href="./public/css/cocinero.css">
   <title>Comanda Cafetería</title>
 </head>
 <body>
