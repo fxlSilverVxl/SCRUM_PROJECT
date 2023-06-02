@@ -1,4 +1,13 @@
 <?php
+
+  session_start();
+  $usuario = $_SESSION['username'];
+  if($usuario != 'caja') {
+    session_destroy();
+    header("Location: ./login.php");
+    exit();
+  }
+
   require_once "./clases/conexion.php";
   require_once "./clases/crud.php";
   $crud = new Crud();

@@ -1,0 +1,67 @@
+    /* Personalizar colores de los botones */
+    .btn-enviar {
+        background-color: #F04F23;
+        border-color: #F04F23;
+        color: white;
+      }
+  
+      .btn-enviar:hover {
+        background-color: #c64516;
+        border-color: #c64516;
+      }
+  
+      .btn-listo {
+        background-color: #47B649;
+        border-color: #47B649;
+        color: white;
+      }
+  
+      .btn-listo:hover {
+        background-color: #3c9437;
+        border-color: #3c9437;
+      }
+  
+      /* Estilos personalizados */
+      .alert-container {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #818182;
+        color: white;
+      }
+  
+      .alert-container textarea {
+        width: calc(100% - 140px);
+        height: 80px;
+        resize: none;
+        margin-bottom: 10px;
+        padding: 5px;
+        color: #000;
+      }
+  
+      .alert-container .btn-enviar-alerta {
+        background-color: #F04F23;
+        border-color: #F04F23;
+        color: white;
+        width: 100px;
+        height: 30px;
+        padding: 5px;
+        margin-top: 15px;
+        margin-left: 10px;
+      }
+  
+      .alert-container .btn-enviar-alerta:hover {
+        background-color: #c64516;
+        border-color: #c64516;
+      }
+  
+      /* Estilos adicionales */
+      .alert-container .alert-wrapper {
+        display: flex;
+        align-items: center;
+      }
+  
+      .alert-container .alert-wrapper .textarea-wrapper {
+        flex-grow: 1;
+      }
