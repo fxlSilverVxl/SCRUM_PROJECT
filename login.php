@@ -39,11 +39,11 @@
                 <h2> <i class="fa-solid fa-lock"></i>  Contraseña:</h2>
                 <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña">
             </div>
+            <div>
+              <input type="button" value="Pantalla de pedidos listos" class="btn btn-secondary btn-block" onclick="window.location.href = 'pedidosListos.php'">
+            </div>
 
             <input type="button" value="Iniciar sesión" class="btn btn-primary btn-block" id="loginBTN">
         </form>
-        <div>
-            <input type="button" value="Pantalla de pedidos listos" class="btn btn-secondary btn-block" onclick="window.location.href = 'listos.html'">
-        </div>
-
+        
 <?php include "./scripts.php"; ?>
