@@ -12,5 +12,4 @@
   } else {
     print_r($respuesta); 
   }
-
 ?>

@@ -11,9 +11,8 @@
   require_once "./clases/conexion.php";
   require_once "./clases/crud.php";
   $crud = new Crud();
-  $datos = $crud->mostrarPedidos();
+  $datos = $crud->mostrarPedidosCaja();
   $mensajes = $crud->mostrarMensajes();
-
 ?>
 
 <?php include "./header.php";?>
@@ -25,6 +24,7 @@
                     <table class="table table-bordered table-striped ">
                         <thead class="headtabla">
                             <tr>
+                                <th>ID</th>
                                 <th>Producto</th>
                                 <th>Precio</th>
                                 <th>Descripción</th>
@@ -38,6 +38,12 @@
                                 foreach($datos as $item) {
                             ?>
                                 <tr>
+                                    <td> <?php 
+                                              $matches = [];
+                                              $patron = "/-(\d+)/"; //* Expresion regular para discriminar lo que hay antes del guion
+                                              preg_match($patron, $item->id, $matches);
+                                              echo $matches[1]
+                                          ?> </td>
                                     <td> <?php echo $item->producto?> </td>
                                     <td> <?php echo $item->precio?> </td>
                                     <td> <?php echo $item->descripcion?> </td>
@@ -68,7 +74,7 @@
             </div>
 
             <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center">
-                <button type="button" class="btn btnnuevopedido" data-bs-toggle="modal" data-bs-target="#miModal">Nuevo Pedido</button>
+                <button type="button" class="btn btnnuevopedido btn-info" style="color: white;" data-bs-toggle="modal" data-bs-target="#miModal">Nuevo Pedido</button>
                 <p></p>
                 <h4>Buzón de mensajes</h4>
                 <div class="scrollable">

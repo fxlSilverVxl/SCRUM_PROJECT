@@ -11,60 +11,102 @@
     exit();
   }
 
+  
   $crud = new Crud();
-  $datos = $crud->mostrarPedidos();
-
+  $datosEntrantes = $crud->mostrarPedidosCaja();
+  $datosEnCurso = $crud->mostrarPedidosCocina();
 ?>
 
-
-
-
 <?php include "./header.php";?>
-    <div class="container">
-      <p></p>
-      <h1>Pedidos del Cocinero</h1>
-      <table class="table table-striped">
-        <thead>
+  <div class="container">
+    <h1>Pedidos entrantes</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Descripción</th>
+          <th>Tomar</th>
+          <!-- <th>Listo</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+          foreach($datosEntrantes as $item){
+        ?>
           <tr>
-            <th>ID</th>
-            <th>Producto</th>
-            <th>Descripción</th>
-            <th>Enviar</th>
-            <th>Listo</th>
+            <td><?php echo $item->producto ?></td>
+            <td><?php echo $item->descripcion ?></td>
+            <!-- <td>
+              <form action="./enviarPantallaPedidos.php" method="POST">
+                <input type="text" hidden value="<?php echo $item->_id ?>" name="id">
+                <button class="btn btn-enviar" name="enviar"><i class="fas fa-paper-plane"></i></button>
+              </form>
+            </td> -->
+            <form action="./procesos/actualizarCocinero.php?accion=tomado" method="POST">
+            <input type="text" hidden value="<?php echo $item->_id ?>" name="id">
+            <td><button class="btn btn-info"><i class="fas fa-check"></i></button></td>
+            </form>
           </tr>
-        </thead>
-        <tbody>
-          <?php
-            foreach($datos as $item){
-          ?>
+        <?php } ?>
+      </tbody>
+    </table>
+    
+    <h1>Pedidos tomados</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Descripción</th>
+          <th>Pedido listo</th>
+          <th>Entregado</th>
+        </tr>
+      </thead>
+
+
+      <tbody>
+      <?php
+        foreach ($datosEnCurso as $item2) {
+            ?>
             <tr>
-              <td><?php echo $item->_id ?></td>
-              <td><?php echo $item->producto ?></td>
-              <td><?php echo $item->descripcion ?></td>
-              <td>
-                <form action="ActualizarCocinero.php" method="POST">
-                  <input type="hidden" value="<?php echo $item->_id ?>" name="id">
-                  <button type="submit" class="btn btn-enviar" name="enviar"><i class="fas fa-paper-plane"></i></button>
+                <td><?php echo $item2->producto ?></td>
+                <td><?php echo $item2->descripcion ?></td>
+                <td>
+                    <form action="./enviarPantallaPedidos.php" method="POST">
+                        <input type="text" hidden value="<?php echo $item2->_id ?>" name="id">
+                        <input type="text" hidden value="<?php echo $item2->estado ?>" id="estado">
+                        <?php if ($item2->estado === "tomado") { ?>
+                            <button id="botonListo" class="btn btn-enviar" name="enviar">Listo <i class="fas fa-paper-plane"></i></button>
+                        <?php } ?>
+                    </form>
+                </td>
+                <form action="./ordenRecogida.php" method="POST">
+                    <input type="text" hidden value="<?php echo $item2->_id ?>" name="id">
+                    <td id="entregado">
+                        <?php if ($item2->estado === "listo") { ?>
+                            <button id="botonEntregado" class="btn btn-listo">
+                                Entregado <i class="fas fa-check"></i>
+                            </button>
+                        <?php } ?>
+                    </td>
                 </form>
-              </td>
-              <td><button class="btn btn-listo"><i class="fas fa-check"></i></button></td>
             </tr>
-
-
-          <?php } ?>
-        </tbody>
-      </table>
-      
-      <div class="alert-container">
-        <h3>Alertas</h3>
+            <?php
+          }
+        ?>
+        
+      </tbody>
+    </table>
+    
+    <div class="alert-container">
+      <h3>Alertas</h3>
+      <form action="./procesos/insertarMensaje.php" method="POST">
         <div class="d-flex align-items-start">
-          <textarea class="mr-2" placeholder="Ingrese la alerta"></textarea>
-          <button class="btn btn-enviar-alerta">Enviar alerta</button>
+          <input type="text" class="form-control" id="mensaje" name="mensaje" placeholder="Ingrese la alerta" required>
+          <button class="btn btn-enviar-alerta">Enviar</button>
         </div>
-      </div>
-    </div>
+      </form>
+  </div>
 
-  <?php include "./scripts.php"; ?>
-
-
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body> 
+</html>

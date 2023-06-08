@@ -3,16 +3,35 @@
     "producto": "quesadilla de chorizo",
     "precio": "25",
     "descripcion": "sin cebolla",
-    "fecha": "29/05/2023",
-    "terminado": false,
-    "entregado": false
+    "fecha": { "$currentDate": { "fechaActual": true } },
+    "estado": "pedido"
   },
   {
     "producto": "quesadilla de bistec",
-    "precio": "25",
+    "precio": "700",
     "descripcion": "",
-    "fecha": "29/05/2023",
-    "terminado": false,
-    "entregado": false
+    "fecha": { "$currentDate": { "fechaActual": true } },
+    "estado": "pedido"
+  },
+  {
+    "producto": "coca sin gas",
+    "precio": "90",
+    "descripcion": "sin gas",
+    "fecha": { "$currentDate": { "fechaActual": true } },
+    "estado": "tomado"
+  },
+  {
+    "producto": "Chilaquiles rojos",
+    "precio": "40",
+    "descripcion": "",
+    "fecha": { "$currentDate": { "fechaActual": true } },
+    "estado": "tomado"
+  },
+  {
+    "producto": "Plato del dia",
+    "precio": "70",
+    "descripcion": "",
+    "fecha": { "$currentDate": { "fechaActual": true } },
+    "estado": "listo"
   }
 ]

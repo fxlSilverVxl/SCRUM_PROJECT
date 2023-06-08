@@ -36,7 +36,7 @@
             <input type="submit" value="Iniciar sesión" class="btn btn-primary btn-block" id="loginBTN">
 
             <div>
-              <input type="button" value="Pantalla de pedidos listos" class="btn btn-secondary btn-block" onclick="window.location.href = 'pedidosListos.html'">
+              <input type="button" value="Pantalla de pedidos listos" class="btn btn-secondary btn-block" onclick="window.location.href = 'pedidosListos.php'">
             </div>
         </form>
         

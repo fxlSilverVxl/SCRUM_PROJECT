@@ -15,11 +15,68 @@ class Crud extends Conexion{
     }
   }
   
+  public function mostrarPedidosCaja (){
+    try {
+      $conexion = Conexion::conectar(); 
+      $coleccion = $conexion->pedidos;
+
+      $filtro = [
+        'estado' => 'pedido'
+      ];
+      $datos = $coleccion->find($filtro);
+      return $datos;
+    } catch (\Throwable $th) {
+      return $th->getMessage();
+    }
+  }
+  public function obtenerID() {
+    try {
+      $conexion = Conexion::conectar(); 
+      $coleccion = $conexion->pedidos;
+      $filtro = [
+        'fecha' => date("d/m/Y")
+      ];
+      $datos = $coleccion->find($filtro);
+      return $datos;
+    } catch (\Throwable $th) {
+      return $th->getMessage();
+    }
+  }
+  public function mostrarPedidosCocina (){
+    try {
+      $conexion = Conexion::conectar(); 
+      $coleccion = $conexion->pedidos;
+      $filtro = [
+        '$or' => [
+          ['estado' => 'tomado'],
+          ['estado' => 'listo'],
+        ]
+      ];
+      $datos = $coleccion->find($filtro);
+      return $datos;
+    } catch (\Throwable $th) {
+      return $th->getMessage();
+    }
+  }
   public function mostrarPedidos (){
     try {
       $conexion = Conexion::conectar(); 
       $coleccion = $conexion->pedidos;
       $datos = $coleccion->find();
+      return $datos;
+    } catch (\Throwable $th) {
+      return $th->getMessage();
+    }
+  }
+
+  public function mostrarPantallaPedidos() {
+    try {
+      $conexion = Conexion::conectar(); 
+      $coleccion = $conexion->pedidos;
+      $filtro = [
+        'estado' => 'listo'
+      ];
+      $datos = $coleccion->find($filtro);
       return $datos;
     } catch (\Throwable $th) {
       return $th->getMessage();
@@ -80,7 +137,17 @@ class Crud extends Conexion{
       return $th->getMessage();
     }
   }
-
+  public function insertarMensaje($datos){
+    try {
+      $conexion = Conexion::conectar(); 
+      $coleccion = $conexion->mensajes;
+      $respuesta = $coleccion->insertOne($datos);
+      return $respuesta;
+    } catch (\Throwable $th) {
+      return $th->getMessage();
+    }
+  }
+  
   public function eliminarMensaje($id){
     try {
       $conexion = Conexion::conectar(); 
@@ -111,6 +178,22 @@ class Crud extends Conexion{
     }
   }
 
-}
+public function actualizarCocina($id, $datos){
+    try{
+      $conexion = Conexion::conectar(); 
+      $coleccion = $conexion->pedidos;
+      $respuesta = $coleccion->updateOne(
+                                        ['_id' => new MongoDB\BSON\ObjectId($id)],
+                                        [
+                                          '$set' => $datos
+                                        ]
+      );
+      return $respuesta;
+    }
+    catch (\Throwable $th) {
+      return $th->getMessage();
+    }
+  } 
 
+}
 ?>
